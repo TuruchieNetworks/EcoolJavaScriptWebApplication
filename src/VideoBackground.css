@@ -1,0 +1,31 @@
+.video-background {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Full height */
+  width: 100vw;  /* Full width */
+}
+.full-video-background {
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Full height */
+  width: 100vw;  /* Full width */
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;  /* Place behind content */
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  position: relative; /* Ensure content is above the video */
+  z-index: 1;
+  color: white; /* Adjust color for readability */
+  text-align: center;
+}
