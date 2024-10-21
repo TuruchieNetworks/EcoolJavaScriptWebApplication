@@ -44,7 +44,7 @@ const AboutContents = ({ currentBackground }) => {
     };
 
     return (
-        <div className=""
+        <div className="video-background"
             id="showcase"
             style={{
             backgroundImage: `url(${images[idx]})`,

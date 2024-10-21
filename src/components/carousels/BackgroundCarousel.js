@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import '../../BackgroundCarousel.css';
 
 // Array of background images
 const images = [

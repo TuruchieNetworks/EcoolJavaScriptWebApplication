@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import logo_scene from '../../videos/logo_scene.mp4';
 import '../../VideoBackground.css';
 import Landing from '../layout/Landing';
-import AboutContents from '../layout/AboutContents';
 
 const LandingBackground = () => {
     const videoRef = useRef(null); // Create a reference for the video element
@@ -23,7 +22,6 @@ const LandingBackground = () => {
                 Your browser does not support HTML5 video.
             </video>
             <Landing/>
-            <AboutContents/>
         </div>
     );
 };

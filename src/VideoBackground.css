@@ -29,3 +29,11 @@ video {
   color: white; /* Adjust color for readability */
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  /* Ensure full coverage for mobile screens */
+  .video-background {
+    width: 100%; /* Ensures coverage for smaller screens */
+    height: 100vh;
+  }
+}
