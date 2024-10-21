@@ -16,8 +16,8 @@ const LandingBackground = () => {
     }, []); // Empty dependency array to run once on mount
 
     return (
-        <div className="video-backgrounds"
-            id="showcas"
+        <div className="video-backgroun"
+            id="showcase"
             style={{
                 transition: 'background-image 0.5s ease-in-out',
                 width: '100vw',

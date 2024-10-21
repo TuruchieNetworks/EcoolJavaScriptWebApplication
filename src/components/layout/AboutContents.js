@@ -50,9 +50,9 @@ const AboutContents = ({ currentBackground }) => {
             backgroundImage: `url(${images[idx]})`,
             transition: 'background-image 0.5s ease-in-out',
             width: '100vw',
-            height: '100%',
+            height: '100vh',
             backgroundSize: 'cover', 
-            backgroundPosition: 'center',
+            backgroundPosition: 'center'
         }}
         ><HeaderTitle />
             <div className="container showcase-container">
