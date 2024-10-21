@@ -47,13 +47,13 @@ const About = ({ currentBackground }) => {
         <div className="video-background"
             id="showcase"
             style={{
-            backgroundImage: `url(${images[idx]})`,
-            transition: 'background-image 0.5s ease-in-out',
-            width: '100vw',
-            height: '100vh',
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center',
-        }}
+                backgroundImage: `url(${images[idx]})`,
+                transition: 'background-image 0.5s ease-in-out',
+                width: '100vw',
+                height: '100%',
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center',
+            }}
         >
             <HeaderTitle />
             <div className="container showcase-container">

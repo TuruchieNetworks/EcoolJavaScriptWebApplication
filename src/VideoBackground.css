@@ -1,8 +1,8 @@
 .video-background {
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
   height: 100vh; /* Full height */
- /*  width: 100vw;  Full width */
+  width: 100vw;  /*   Full width */
 }
 .full-video-background {
   position: relative;
@@ -33,7 +33,7 @@ video {
 @media (max-width: 768px) {
   /* Ensure full coverage for mobile screens */
   .video-background {
-    width: 100%; /* Ensures coverage for smaller screens */
+    width: 100vw; /* Ensures coverage for smaller screens */
     height: 100vh;
   }
 }

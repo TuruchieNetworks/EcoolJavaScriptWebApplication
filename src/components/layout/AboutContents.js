@@ -49,8 +49,8 @@ const AboutContents = ({ currentBackground }) => {
             style={{
             backgroundImage: `url(${images[idx]})`,
             transition: 'background-image 0.5s ease-in-out',
-            // width: '100vw',
-            // height: '100vh',
+            width: '100vw',
+            height: '100%',
             backgroundSize: 'cover', 
             backgroundPosition: 'center',
         }}
@@ -71,7 +71,7 @@ const AboutContents = ({ currentBackground }) => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
                     </p>
                 </div>
-                <Link to="/about" className="btn party-lights"> {/* Updated to use Link */}
+                <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
             </div>
