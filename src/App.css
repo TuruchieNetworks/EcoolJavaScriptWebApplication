@@ -97,6 +97,9 @@ body:hover {
   top: 0;
   left: 0;
   z-index: 1;
+  width: 100vw; /* Ensures it spans the entire width */
+  height: 100vh; /* Ensures it spans the entire height */
+  overflow: hidden; /* Ensure nothing leaks outside the screen */
 }
 
 .menu-wrap .toggler {
@@ -202,8 +205,8 @@ body:hover {
 .menu-wrap .menu > div {
   background: var(--overlay-color);
   border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 300vw; /* Increased from 200vw */
+  height: 300vw; /* Increased from 200vw */
   display: flex;
   flex: none;
   align-items: center;
@@ -374,4 +377,21 @@ body:hover {
   height: 100%;
 }
 
+}
+
+@media (max-width: 768px) {
+  /* Ensure full coverage for mobile screens */
+  .menu-wrap .menu > div {
+    width: 350vw; /* Ensures coverage for smaller screens */
+    height: 350vw;
+  }
+
+  .menu-wrap .menu > div > div {
+    max-width: 80vw; /* Adjust content size */
+    max-height: 90vh; /* Ensure it fits within smaller screens */
+  }
+
+  .menu-wrap .menu > div > div > ul > li {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+  }
 }

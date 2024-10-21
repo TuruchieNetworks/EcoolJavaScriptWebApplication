@@ -9,7 +9,7 @@ import pose_gaze_brown from '../../img/pose_gaze_brown.jpg';
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 
-const About = ({ currentBackground }) => {  
+const AboutContents = ({ currentBackground }) => {  
     const videoRef = useRef(null); // Create a reference for the video element
 
     useEffect(() => {
@@ -44,20 +44,19 @@ const About = ({ currentBackground }) => {
     };
 
     return (
-        <div className="video-background"
+        <div className=""
             id="showcase"
             style={{
             backgroundImage: `url(${images[idx]})`,
             transition: 'background-image 0.5s ease-in-out',
-            width: '100vw',
-            height: '100vh',
+            // width: '100vw',
+            // height: '100vh',
             backgroundSize: 'cover', 
             backgroundPosition: 'center',
         }}
-        >
-            <HeaderTitle />
+        ><HeaderTitle />
             <div className="container showcase-container">
-                <div className='flex-carousel'>
+                <div className='flex-carousel carousel-contents'>
                     <div><ImageCarousel /></div>
                     <p className='carousel-contents'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
@@ -80,4 +79,4 @@ const About = ({ currentBackground }) => {
     );
 };
 
-export default About;
+export default AboutContents;

@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import logo_scene from '../../videos/logo_scene.mp4';
 import '../../VideoBackground.css';
 import Landing from '../layout/Landing';
-import AboutContents from '../layout/AboutContents';
+import About from '../layout/About';
 
-const LandingBackground = () => {
+const AboutBackground = () => {
     const videoRef = useRef(null); // Create a reference for the video element
 
     useEffect(() => {
@@ -23,9 +23,9 @@ const LandingBackground = () => {
                 Your browser does not support HTML5 video.
             </video>
             <Landing/>
-            <AboutContents/>
+            <About/>
         </div>
     );
 };
 
-export default LandingBackground;
+export default AboutBackground;

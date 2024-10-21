@@ -5,7 +5,7 @@ import '../../PlayerAnimations.css';
 import HeaderTitle from '../layout/HeaderTitle';
 import ImageCarousel from '../carousels/ImageCarousel';
 import VideoBackground from '../backgroundVideos/VideoBackground';
-import About from './About';
+import AboutContents from '../layout/AboutContents';
 
 const Landing = () => {
     return (
@@ -18,7 +18,7 @@ const Landing = () => {
                     Read More
                 </Link>
             </div>
-            <About/>
+            <AboutContents/>
             <VideoBackground/>
         </header>
     );
