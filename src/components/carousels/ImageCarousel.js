@@ -52,10 +52,19 @@ const ImageCarousel = () => {
             <div
                 className="image-container"
                 id="imgs"
-                style={{ transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out' }}
+                style={{ transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
             >
                 {images.map((image, index) => (
-                    <img src={image} alt={`image-${index}`} key={index} />
+                    <img 
+                        src={image} 
+                        alt={`image-${index}`} 
+                        key={index}
+                        style={{
+                            width: '500px', 
+                            height: 'auto', 
+                            objectFit: index === 0 ? 'contain' : 'cover', // 'contain' for logo, 'cover' for others
+                        }}
+                    />
                 ))}
             </div>
             <div className="btn-container">
