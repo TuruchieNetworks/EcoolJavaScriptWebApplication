@@ -61,7 +61,7 @@ const About = ({ currentBackground }) => {
                     <div className='image-carousel'>
                         <ImageCarousel />
                     </div>
-                    <p className='carousel-contents'>
+                    <p className='carousel-contents' style={{fontSize: '14px'}}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
