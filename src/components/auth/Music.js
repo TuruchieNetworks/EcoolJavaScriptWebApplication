@@ -78,7 +78,7 @@ const Music = ({ currentBackground }) => {
                         <ImageCarousel />
                     </div>
                     <div className='carousel-contents'>
-                        <p> 
+                        <p style={{fontSize: '14px'}}> 
                             STAY TUNED FOR SOMETHING MAGICAL!
                             STAY TUNED FOR SOMETHING MAGICAL!
                             STAY TUNED FOR SOMETHING MAGICAL!
