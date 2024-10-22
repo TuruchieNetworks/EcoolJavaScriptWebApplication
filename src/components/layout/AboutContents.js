@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import HeaderTitle from './HeaderTitle';
 import ImageCarousel from '../carousels/ImageCarousel';
 import logo from '../../img/logo.jpg'; 
 import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
@@ -9,6 +8,7 @@ import pose_gaze_brown from '../../img/pose_gaze_brown.jpg';
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import AboutLanding from './AboutLanding';
+import HeaderLinks from './HeaderLinks';
 
 const AboutContents = ({ currentBackground }) => {  
     const videoRef = useRef(null); // Create a reference for the video element
@@ -55,12 +55,12 @@ const AboutContents = ({ currentBackground }) => {
             backgroundSize: 'cover', 
             backgroundPosition: 'center'
         }}
-        ><HeaderTitle />
+        ><HeaderLinks />
             <div className="container showcase-container">
                 <div className='flex-carousel carousel-contents'>
                     <div><ImageCarousel /></div>
                     <div><AboutLanding /> </div>
-                    <div className=''><AboutLanding /> </div> 
+                    <div><AboutLanding /> </div> 
                 </div>
                 {/* */}
             </div>

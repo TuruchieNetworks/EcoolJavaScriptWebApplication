@@ -42,7 +42,7 @@ const MusicBackground = () => {
     };
 
     return (
-        <div className="full-video-background"
+        <div className="full-video-backgroun"
             id="showcase"
             style={{
                 backgroundImage: `url(${images[idx]})`,

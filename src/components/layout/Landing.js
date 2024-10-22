@@ -8,6 +8,7 @@ import VideoBackground from '../backgroundVideos/VideoBackground';
 import BackgroundCarousel from '../carousels/BackgroundCarousel';
 import MusicBackground from '../backgroundVideos/MusicBackground';
 import About from './About';
+import HeaderLinks from './HeaderLinks';
 
 const Landing = () => {
     return (
@@ -15,7 +16,7 @@ const Landing = () => {
             {/* <div className="galaxial-animations"></div> */}
             <div className="container showcase-container imageCover">
                 <ImageCarousel />
-                <HeaderTitle />
+                <HeaderLinks />
                 <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>

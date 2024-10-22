@@ -8,6 +8,7 @@ import pose_brown_gradient from '../../img/pose_brown_gradient.jpg';
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
+import HeaderLinks from '../layout/HeaderLinks';
 
 const Music = ({ currentBackground }) => {  
     const videoRef = useRef(null); // Create a reference for the video element
@@ -62,11 +63,12 @@ const Music = ({ currentBackground }) => {
         resetInterval();
     };
     return (
-        <div className=""
+        <div
             id="showcase"
             style={{
             //backgroundImage: `url(${images[idx]})`,
             transition: 'background-image 0.5s ease-in-out',
+            width: '100vw',
             height: '100vh',
             // backgroundSize: 'cover', 
             // backgroundPosition: 'center',
@@ -118,8 +120,8 @@ const Music = ({ currentBackground }) => {
                         </p>
                     </div>
                 </div>
-                <HeaderTitle />
-                <Link to="/music" className="btn party-lights"> {/* Updated to use Link */}
+                <HeaderLinks />
+                <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
             </div>

@@ -80,9 +80,13 @@ const ImageCarousel = () => {
                     /> 
                 ))}
             </div>
-            <div className="btn-container">
-                <button id="left" className="btn" onClick={handlePrev}>Prev</button>
-                <button id="right" className="btn" onClick={handleNext}>Next</button>
+            <div className='btn-container'>
+                <button id='left' className='btn' onClick={handlePrev}>
+                    <i className='fas fa-step-forward'></i> Prev
+                </button>
+                <button id='right' className='btn' onClick={handleNext}>
+                    Next <i className='fas fa-step-forward'></i>
+                </button>
             </div>
         </div>
     );
