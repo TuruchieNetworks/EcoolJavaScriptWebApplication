@@ -11,10 +11,11 @@ import About from './About';
 
 const Landing = () => {
     return (
-        <header id="video-background">
+        <header id="showcase">
             {/* <div className="galaxial-animations"></div> */}
             <div className="container showcase-container imageCover">
                 <ImageCarousel />
+                <HeaderTitle />
                 <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>

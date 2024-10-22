@@ -22,6 +22,12 @@ video {
   z-index: -1;  /* Place behind content */
   transform: translate(-50%, -50%);
 }
+/* .background-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Full height 
+  width: 100vw;    Full width
+} */
 
 .content {
   position: relative; /* Ensure content is above the video */

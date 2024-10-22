@@ -3,12 +3,14 @@ import React from 'react';
 
 const HeaderTitle = () => {
     return (
-        <h2 className="party-lights">
+        <div className=''>
+        <h2 className="party-lights spreader">
             <span className="bright-cover type-writer">
-                ECool Entertainment And More 🎶 
+                <span className="spreader">ECool Entertainment And More </span>🎶 
                 <span className="fas fa-drum"></span>
             </span>
         </h2>
+        </div>
     );
 };
 

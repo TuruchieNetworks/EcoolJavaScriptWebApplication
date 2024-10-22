@@ -67,13 +67,12 @@ const Music = ({ currentBackground }) => {
             style={{
             //backgroundImage: `url(${images[idx]})`,
             transition: 'background-image 0.5s ease-in-out',
-            // height: '100vh',
+            height: '100vh',
             // backgroundSize: 'cover', 
             // backgroundPosition: 'center',
         }}
         >
             <div className="container showcase-container imageCover">
-                <HeaderTitle />
                 <div className='flex-carousel'>
                     <div className='showcase-container'>
                         <ImageCarousel />
@@ -119,6 +118,7 @@ const Music = ({ currentBackground }) => {
                         </p>
                     </div>
                 </div>
+                <HeaderTitle />
                 <Link to="/music" className="btn party-lights"> {/* Updated to use Link */}
                     Read More
                 </Link>

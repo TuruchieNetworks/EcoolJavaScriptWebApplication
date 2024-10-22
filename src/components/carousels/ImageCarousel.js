@@ -58,19 +58,28 @@ const ImageCarousel = () => {
                 style={{ transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
             >
                 {images.map((image, index) => (
+                    index === 0 ? 
                     <img 
                         src={image} 
                         alt={`image-${index}`} 
                         key={index}
                         style={{
                             width: '500px', 
-                            height: 'auto', 
-                            objectFit: index === 0 ? 'contain' : 'cover', // 'contain' for logo, 'cover' for others
+                            objectFit: 'contain'
                         }}
-                    />
+                    /> :
+                    <img 
+                        src={image} 
+                        alt={`image-${index}`} 
+                        key={index}
+                        style={{
+                            width: '500px', 
+                            // height: 'auto', 
+                            objectFit: 'cover'
+                        }}
+                    /> 
                 ))}
             </div>
-            <HeaderTitle />
             <div className="btn-container">
                 <button id="left" className="btn" onClick={handlePrev}>Prev</button>
                 <button id="right" className="btn" onClick={handleNext}>Next</button>
