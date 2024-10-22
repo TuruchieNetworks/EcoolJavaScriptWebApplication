@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "../../BackgroundSlider.css";
 
 // List of static images
@@ -9,14 +9,14 @@ import smilingPoseKharki from '../../img/smiling_pose_brown.jpg';
 import solidPoseKharki from '../../img/solid_pose_kharki.jpg';
 
 const BackgroundSlider = ({ autoSlide = false, slideInterval = 3000 }) => {
-  // Static images defined directly in the component
-  const images = [
+  // Memoize the images array
+  const images = useMemo(() => [
     logo,
     poseBrownGradient,
     poseGazeBrown,
     smilingPoseKharki,
     solidPoseKharki
-  ];
+  ], []);
 
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -34,6 +34,18 @@ const BackgroundSlider = ({ autoSlide = false, slideInterval = 3000 }) => {
   const prevSlide = () => {
     setActiveSlide((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  // Auto slide effect if enabled
+  useEffect(() => {
+    let intervalId;
+    if (autoSlide) {
+      intervalId = setInterval(nextSlide, slideInterval);
+    }
+
+    return () => {
+      clearInterval(intervalId); // Cleanup on unmount or when autoSlide changes
+    };
+  }, [autoSlide, slideInterval]);
 
   return (
     <div className="slider-container">

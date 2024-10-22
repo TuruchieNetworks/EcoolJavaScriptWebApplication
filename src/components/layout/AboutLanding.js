@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import '../../App.css';
 
-const AboutLanding = ({ currentBackground }) => {
+const AboutLanding = () => {
   return (
     <div className=''>
         <p className='carousel-contents' style={{fontSize: '14px'}}>

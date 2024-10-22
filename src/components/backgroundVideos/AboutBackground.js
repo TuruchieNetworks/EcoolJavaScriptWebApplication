@@ -17,7 +17,17 @@ const AboutBackground = () => {
     }, []); // Empty dependency array to run once on mount
 
     return (
-        <div>
+        <div
+            id="showcase"
+            style={{
+            //backgroundImage: `url(${images[idx]})`,
+            transition: 'background-image 0.5s ease-in-out',
+            width: '100vw',
+            height: '100vh',
+            // backgroundSize: 'cover', 
+            // backgroundPosition: 'center',
+        }}
+        >
             <video ref={videoRef} loop muted autoPlay>
                 <source src={logo_scene} type="video/mp4" />
                 Your browser does not support HTML5 video.

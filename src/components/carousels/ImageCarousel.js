@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import '../../ImageCarousel.css'; 
 import logo from '../../img/logo.jpg'; 
 import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
-import HeaderTitle from '../layout/HeaderTitle';
+import CarouselButton from './CarouselButton';
+import useCarousel from '../hooks/UseCarousel'; 
 
 const images = [
     logo,
@@ -17,38 +18,7 @@ const images = [
 
 // object-fit: contain; /* Ensure images cover the area */
 const ImageCarousel = () => {
-    const [idx, setIdx] = useState(0); // current index of the image
-    // const [height, setHeight] = useState(); // current index of the image
-    const intervalRef = useRef(null); // to hold the interval reference
-
-    useEffect(() => {
-        intervalRef.current = setInterval(run, 2000); // Start the interval
-
-        return () => clearInterval(intervalRef.current); // Cleanup on unmount
-    }, []);
-
-    const run = () => {
-        setIdx((prevIdx) => (prevIdx + 1) % images.length); // Loop back to the start
-    };
-
-    const changeImage = (newIdx) => {
-        setIdx(newIdx);
-    };
-
-    const resetInterval = () => {
-        clearInterval(intervalRef.current);
-        intervalRef.current = setInterval(run, 2000);
-    };
-
-    const handleNext = () => {
-        changeImage((prevIdx) => (prevIdx + 1) % images.length); // Move to the next image
-        resetInterval();
-    };
-
-    const handlePrev = () => {
-        changeImage((prevIdx) => (prevIdx - 1 + images.length) % images.length); // Move to the previous image
-        resetInterval();
-    };
+    const { idx, handleNext, handlePrev } = useCarousel(images); // Use the custom hook
 
     return (
         <div className="Carousel">
@@ -81,12 +51,8 @@ const ImageCarousel = () => {
                 ))}
             </div>
             <div className='btn-container'>
-                <button id='left' className='btn' onClick={handlePrev}>
-                    <i className='fas fa-step-forward'></i> Prev
-                </button>
-                <button id='right' className='btn' onClick={handleNext}>
-                    Next <i className='fas fa-step-forward'></i>
-                </button>
+                <CarouselButton direction="left" handleClick={handlePrev} />
+                <CarouselButton direction="right" handleClick={handleNext} />
             </div>
         </div>
     );

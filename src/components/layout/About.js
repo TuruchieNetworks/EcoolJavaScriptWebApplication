@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
@@ -8,8 +8,21 @@ import pose_gaze_brown from '../../img/pose_gaze_brown.jpg';
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import HeaderLinks from './HeaderLinks';
+import useCarouselImages from '../hooks/UseCarouselImages';
 
-const About = ({ currentBackground }) => {  
+// Array of background images
+const images = [
+    logo,
+    pose_brown_gradient,
+    pose_gaze_brown,
+    smiling_pose_brown,
+    solid_pose_kharki,
+];
+
+const About = ({ currentBackground, handlePrev, handleNext }) => {  
+    // Use the custom hook for managing carousel images
+    const { idx, changeImage } = useCarouselImages(images);
+
     const videoRef = useRef(null); // Create a reference for the video element
 
     useEffect(() => {
@@ -21,27 +34,6 @@ const About = ({ currentBackground }) => {
         }
     }, []); // Empty dependency array to run once on mount
 
-    // Array of background images
-    const images = [
-        logo,
-        pose_brown_gradient,
-        pose_gaze_brown,
-        smiling_pose_brown,
-        solid_pose_kharki,
-    ];
-
-    const [idx, setIdx] = useState(0); // current index of the image
-    const intervalRef = useRef(null); // to hold the interval reference
-
-    useEffect(() => {
-        intervalRef.current = setInterval(run, 2000); // Start the interval
-
-        return () => clearInterval(intervalRef.current); // Cleanup on unmount
-    }, []);
-
-    const run = () => {
-        setIdx((prevIdx) => (prevIdx + 1) % images.length); // Loop back to the start
-    };
 
     return (
         <div className=""
@@ -57,9 +49,10 @@ const About = ({ currentBackground }) => {
         >
             <div className="container showcase-container">
                 <div className='flex-carousel'>
-                    <div className='image-carousel'>
-                        <ImageCarousel />
+                    <div className="image-carousel">
+                        <ImageCarousel images={images} idx={idx} setIdx={changeImage} />
                     </div>
+
                     <p className='carousel-contents' style={{fontSize: '14px'}}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.

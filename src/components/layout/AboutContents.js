@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
@@ -9,6 +9,16 @@ import smiling_pose_brown from '../../img/smiling_pose_brown.jpg';
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import AboutLanding from './AboutLanding';
 import HeaderLinks from './HeaderLinks';
+import useCarouselImages from '../hooks/UseCarouselImages';
+
+// Array of background images
+const images = [
+    logo,
+    pose_brown_gradient,
+    pose_gaze_brown,
+    smiling_pose_brown,
+    solid_pose_kharki,
+];
 
 const AboutContents = ({ currentBackground }) => {  
     const videoRef = useRef(null); // Create a reference for the video element
@@ -21,28 +31,10 @@ const AboutContents = ({ currentBackground }) => {
             });
         }
     }, []); // Empty dependency array to run once on mount
-
-    // Array of background images
-    const images = [
-        logo,
-        pose_brown_gradient,
-        pose_gaze_brown,
-        smiling_pose_brown,
-        solid_pose_kharki,
-    ];
-
-    const [idx, setIdx] = useState(0); // current index of the image
-    const intervalRef = useRef(null); // to hold the interval reference
-
-    useEffect(() => {
-        intervalRef.current = setInterval(run, 2000); // Start the interval
-
-        return () => clearInterval(intervalRef.current); // Cleanup on unmount
-    }, []);
-
-    const run = () => {
-        setIdx((prevIdx) => (prevIdx + 1) % images.length); // Loop back to the start
-    };
+ 
+    // Use the custom hook for managing carousel images
+    const { idx, changeImage } = useCarouselImages(images);
+    console.log(changeImage)
 
     return (
         <div className="video-background"
