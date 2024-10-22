@@ -46,7 +46,7 @@ const LandingBackground = () => {
             id="showcase"
             style={{
                 backgroundImage: `url(${images[idx]})`,
-                backgroundSize: 'contain', 
+                backgroundSize: 'cover', 
                 backgroundPosition: 'center',
                 transition: 'background-image 0.5s ease-in-out',
                 // width: '100vw',

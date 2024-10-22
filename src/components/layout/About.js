@@ -36,20 +36,20 @@ const About = ({ currentBackground, handlePrev, handleNext }) => {
 
 
     return (
-        <div className=""
+        <div
             id="showcase"
             style={{
-                backgroundImage: `url(${images[idx]})`,
-                transition: 'background-image 0.5s ease-in-out',
-                width: '100vw',
-                height: '100vh',
-                backgroundSize: 'cover', 
-                backgroundPosition: 'center',
-            }}
+            //backgroundImage: `url(${images[idx]})`,
+            transition: 'background-image 0.5s ease-in-out',
+            width: '100vw',
+            height: '100vh',
+            // backgroundSize: 'cover', 
+            // backgroundPosition: 'center',
+        }}
         >
-            <div className="container showcase-container">
+            <div className="container showcase-container imageCover">
                 <div className='flex-carousel'>
-                    <div className="image-carousel">
+                    <div className='showcase-container'>
                         <ImageCarousel images={images} idx={idx} setIdx={changeImage} />
                     </div>
 
