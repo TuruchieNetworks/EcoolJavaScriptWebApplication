@@ -39,12 +39,12 @@ const About = ({ currentBackground, handlePrev, handleNext }) => {
         <div
             id="showcase"
             style={{
-            //backgroundImage: `url(${images[idx]})`,
-            transition: 'background-image 0.5s ease-in-out',
+            backgroundImage: `url(${images[idx]})`,
             width: '100vw',
             height: '100vh',
-            // backgroundSize: 'cover', 
-            // backgroundPosition: 'center',
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center',
+            transition: 'background-image 0.5s ease-in-out'
         }}
         >
             <div className="container showcase-container imageCover">
