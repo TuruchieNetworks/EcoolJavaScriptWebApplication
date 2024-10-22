@@ -8,6 +8,7 @@ import pose_brown_gradient from '../../img/pose_brown_gradient.jpg';
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
+import AboutLanding from './AboutLanding';
 
 const AboutContents = ({ currentBackground }) => {  
     const videoRef = useRef(null); // Create a reference for the video element
@@ -58,23 +59,14 @@ const AboutContents = ({ currentBackground }) => {
             <div className="container showcase-container">
                 <div className='flex-carousel carousel-contents'>
                     <div><ImageCarousel /></div>
-                    <p className='carousel-contents'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                    </p>
+                    <div><AboutLanding /> </div>
+                    <div className=''><AboutLanding /> </div> 
                 </div>
+                {/* */}
+            </div>
                 <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
-            </div>
         </div>
     );
 };

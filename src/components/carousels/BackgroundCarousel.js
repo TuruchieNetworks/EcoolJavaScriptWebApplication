@@ -1,12 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
+import logo from '../../img/logo.jpg'; 
+import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
+import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
+import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
+import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 
 // Array of background images
 const images = [
-  'url(../../img/logo.jpg)',
-  'url(../../img/pose_brown_gradient.jpg)',
-  'url(../../img/pose_gaze_brown.jpg)',
-  'url(../../img/smiling_pose_kharki.jpg)',
-  'url(../../img/solid_pose_kharki.jpg)',
+    logo,
+    pose_brown_gradient,
+    pose_gaze_brown,
+    smiling_pose_brown,
+    solid_pose_kharki
 ];
 
 
@@ -44,17 +49,17 @@ const BackgroundCarousel = ({ onBackgroundChange }) => {
   // };
 
   return (
-    <div className="Carousel">
-      <div
-        className="background-container"
+    <div className="Carousel"
         style={{
           backgroundImage: `url(${images[idx]})`,
           transition: 'background-image 0.5s ease-in-out',
+          width: '100vw', // Adjust the height as needed
           height: '100vh', // Adjust the height as needed
           backgroundSize: 'cover', // Ensure the background covers the whole container
           backgroundPosition: 'center', // Position the background image in the center
-        }}
-      >
+        }}>
+      <div
+        className="background-container">
 
       </div>
     </div>

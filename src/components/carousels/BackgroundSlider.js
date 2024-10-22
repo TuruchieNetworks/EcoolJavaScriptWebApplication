@@ -43,7 +43,8 @@ const BackgroundSlider = ({ autoSlide = false, slideInterval = 3000 }) => {
           key={index}
           className={`slide ${index === activeSlide ? "active" : ""}`}
           style={{ backgroundImage: `url(${image})` }}
-        ></div>
+        >
+        </div>
       ))}
 
       {/* Left/Right Arrows */}

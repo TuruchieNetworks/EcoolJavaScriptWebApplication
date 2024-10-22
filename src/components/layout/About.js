@@ -58,7 +58,9 @@ const About = ({ currentBackground }) => {
             <HeaderTitle />
             <div className="container showcase-container">
                 <div className='flex-carousel'>
-                    <div><ImageCarousel /></div>
+                    <div className='image-carousel'>
+                        <ImageCarousel />
+                    </div>
                     <p className='carousel-contents'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.

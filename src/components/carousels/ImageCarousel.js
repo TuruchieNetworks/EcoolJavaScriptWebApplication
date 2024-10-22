@@ -5,17 +5,20 @@ import pose_brown_gradient from '../../img/pose_brown_gradient.jpg';
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
+import HeaderTitle from '../layout/HeaderTitle';
 
 const images = [
     logo,
     pose_brown_gradient,
     pose_gaze_brown,
     smiling_pose_brown,
-    solid_pose_kharki,
+    solid_pose_kharki
 ];
 
+// object-fit: contain; /* Ensure images cover the area */
 const ImageCarousel = () => {
     const [idx, setIdx] = useState(0); // current index of the image
+    // const [height, setHeight] = useState(); // current index of the image
     const intervalRef = useRef(null); // to hold the interval reference
 
     useEffect(() => {
@@ -67,6 +70,7 @@ const ImageCarousel = () => {
                     />
                 ))}
             </div>
+            <HeaderTitle />
             <div className="btn-container">
                 <button id="left" className="btn" onClick={handlePrev}>Prev</button>
                 <button id="right" className="btn" onClick={handleNext}>Next</button>

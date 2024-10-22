@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/layout/NavBar';
 import About from './components/layout/About';
 import AboutContents from './components/layout/AboutContents';
+import AboutLanding from './components/layout/AboutLanding';
 import Landing from './components/layout/Landing';
 import Contact from './components/auth/Contact';
 import Music from './components/auth/Music';
@@ -45,6 +46,7 @@ function App() {
         <Route exact path='/Landing' element={ <LandingBackground /> } />
         <Route exact path='/About' element={ <About handleBackgroundChange={handleBackgroundChange} /> } />
         <Route exact path='/AboutContents' element={ <AboutContents handleBackgroundChange={handleBackgroundChange} /> } />
+        <Route exact path='/AboutLanding' element={ <AboutLanding handleBackgroundChange={handleBackgroundChange} /> } />
         <Route exact path='/Contact' element={ <Contact /> } />
         <Route exact path='/Services' element={ <Services /> } />
         <Route exact path='/Merchandise' element={ <Merchandise /> } />

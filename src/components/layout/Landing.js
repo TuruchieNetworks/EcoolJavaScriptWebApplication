@@ -5,21 +5,24 @@ import '../../PlayerAnimations.css';
 import HeaderTitle from '../layout/HeaderTitle';
 import ImageCarousel from '../carousels/ImageCarousel';
 import VideoBackground from '../backgroundVideos/VideoBackground';
-import AboutContents from '../layout/AboutContents';
+import BackgroundCarousel from '../carousels/BackgroundCarousel';
+import MusicBackground from '../backgroundVideos/MusicBackground';
+import About from './About';
 
 const Landing = () => {
     return (
-        <header id="showcase">
+        <header id="video-background">
             {/* <div className="galaxial-animations"></div> */}
             <div className="container showcase-container imageCover">
-                <HeaderTitle />
                 <ImageCarousel />
                 <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
             </div>
-            <AboutContents/>
-            <VideoBackground/>
+            <MusicBackground/>
+            <About/>
+            <BackgroundCarousel />
+            {/* <VideoBackground/> */}
         </header>
     );
 };
