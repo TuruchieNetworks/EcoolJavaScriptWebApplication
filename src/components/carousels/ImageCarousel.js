@@ -62,8 +62,7 @@ const ImageCarousel = () => {
                         style={{
                             width: '500px', 
                             height: 'auto', 
-                            // Apply objectFit "cover" only for non-logo images (index > 0)
-                            objectFit: index !== 0 ? "cover" : "none",
+                            objectFit: index === 0 ? 'contain' : 'cover', // 'contain' for logo, 'cover' for others
                         }}
                     />
                 ))}
