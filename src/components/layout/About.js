@@ -19,11 +19,9 @@ const images = [
     solid_pose_kharki,
 ];
 
-const About = ({ currentBackground, handlePrev, handleNext }) => {  
-    // Use the custom hook for managing carousel images
+const About = ({ currentBackground, handlePrev, handleNext }) => {
     const { idx, changeImage } = useCarouselImages(images);
-
-    const videoRef = useRef(null); // Create a reference for the video element
+    const videoRef = useRef(null); 
 
     useEffect(() => {
         // Play the video when the component mounts

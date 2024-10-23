@@ -19,10 +19,10 @@ const images = [
     solid_pose_kharki,
 ];
 
-const Contact = ({ currentBackground }) => {
-    const intervalRef = useRef(null); // to hold the interval reference
+const Contact = () => {
+    const videoRef = useRef(null); 
     const { idx, changeImage } = useCarouselImages(images);
-    const videoRef = useRef(null); // Create a reference for the video element
+    console.log(changeImage)
 
     useEffect(() => {
         // Play the video when the component mounts
@@ -31,23 +31,24 @@ const Contact = ({ currentBackground }) => {
                 console.error("Error attempting to play the video:", error);
             });
         }
-    }, []); // Empty dependency array to run once on mount
+    }, [idx]); // Empty dependency array to run once on mount
 
     return (
-        <div className="video-background App"
+        <div
             id="showcase"
             style={{
-            backgroundImage: `url(${images[idx]})`,
-            transition: 'background-image 0.5s ease-in-out',
-            height: '100vh',
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center',
-        }}
+                width: '100vw',
+                height: '100vh',
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center',
+                backgroundImage: `url(${images[idx]})`,
+                transition: 'background-image 0.5s ease-in-out',
+            }}
         >
             <div className="container showcase-container imageCover">
                 <div className='flex-carousel'>
-                    <div className="image-carousel">
-                        <ImageCarousel images={images} idx={idx} setIdx={changeImage} />
+                    <div className='showcase-container'>
+                        <ImageCarousel />
                     </div>
                     <div className='carousel-contents'>
                         <p style={{fontSize: '14px'}}>
@@ -65,7 +66,7 @@ const Contact = ({ currentBackground }) => {
                     </div>
                 </div>
                 <HeaderLinks />
-                <Link to="/music" className="btn party-lights"> {/* Updated to use Link */}
+                <Link to="/music" className="btn party-lights">
                     Read More
                 </Link>
             </div>
