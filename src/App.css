@@ -367,6 +367,7 @@ body:hover {
   width: 100%;
 }
 .bio-container p {
+  text-align:left;
   padding: 5px;
   padding: 0.3rem;
   z-index: 20;
@@ -376,6 +377,9 @@ body:hover {
   z-index: 500;
   background: rgba(0, 0, 0, 0.9); 
   transition: all 0.91s ease-in-out;
+}
+.bio-container p .bio-content {
+  margin: 2rem 0;
 }
 .phoneBio {
   width: 100%;
@@ -429,6 +433,10 @@ body:hover {
     height: 100px;
     /* background: rgba(0, 0, 0, 0.7); */
     transition: all 2.1s ease;
+  }
+  .bio-container p .bio-content {
+    display: block;
+    margin: 10px 0;
   }
   /* .phoneBio:hover {
     background: rgba(0, 0, 0, 0.9);

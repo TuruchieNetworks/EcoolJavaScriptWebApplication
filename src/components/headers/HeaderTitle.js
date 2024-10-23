@@ -4,7 +4,7 @@ const HeaderTitle = () => {
     return (
     <div className='headerTitle'>
             <h2 className="party-lights spreader">
-                <div className="bright-cover type-writer">
+                <div className="bright-cover type-writer ">
                     <span className="spreader">ECool Entertainment And More </span>🎶 
                     <span className="fas fa-drum"></span>
                 </div>
