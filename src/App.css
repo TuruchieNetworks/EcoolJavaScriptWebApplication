@@ -288,6 +288,7 @@ body:hover {
 .container {
   /* width: 100%; */
   padding: 10px 0;
+  /* padding: 0.3rem; */
   overflow: hidden;
 }
 .container:hover {
@@ -365,6 +366,17 @@ body:hover {
 .bio-container {
   width: 100%;
 }
+.bio-container p {
+  padding: 5px;
+  padding: 0.3rem;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.7); 
+}
+.bio-container p:hover {
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.9); 
+  transition: all 0.91s ease-in-out;
+}
 .phoneBio {
   width: 100%;
   display: none;
@@ -374,9 +386,6 @@ body:hover {
   width: 100%;
   visibility:visible;
 } 
-.bio-container p {
-  background: rgba(0, 0, 0, 0.7); 
-}
 /* Mobile Styles */
 @media (max-width: 700px) {
   #showcase .showcase-container {
