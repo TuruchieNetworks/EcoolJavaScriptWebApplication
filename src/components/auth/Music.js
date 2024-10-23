@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
-import HeaderLinks from '../layout/HeaderLinks';
+import HeaderLinks from '../headers/HeaderLinks';
+import Biography from '../layout/Bio';
 
 const Music = () => {
     //const { idx, changeImage } = useCarouselImages(images);
@@ -33,51 +34,19 @@ const Music = () => {
                     <div className='showcase-container'>
                         <ImageCarousel />
                     </div>
-                    <div className='carousel-contents'>
-                        <p style={{fontSize: '14px'}}> 
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!CAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!CAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                            STAY TUNED FOR SOMETHING MAGICAL!
-                        </p>
+                    <div className='pcBio'>
+                        <Biography />
                     </div>
                 </div>
+                <div className='phoneBio'>
+                    <Biography />
+                </div>
+                <div className='phone-state'>
                 <HeaderLinks />
                 <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
+                </div>
             </div>
         </div>
     );

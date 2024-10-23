@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/layout/NavBar';
 import About from './components/layout/About';
-import AboutContents from './components/layout/AboutContents';
 import AboutLanding from './components/layout/AboutLanding';
 import Contact from './components/auth/Contact';
 import Services from './components/auth/Services';
@@ -23,7 +22,6 @@ function App() {
         <Route exact path='/' element={<Navigate to='/Landing' />} />
         <Route exact path='/Landing' element={ <LandingBackground /> } />
         <Route exact path='/About' element={ <About /> } />
-        <Route exact path='/AboutContents' element={ <AboutContents /> } />
         <Route exact path='/AboutLanding' element={ <AboutLanding /> } />
         <Route exact path='/Contact' element={ <Contact /> } />
         <Route exact path='/Services' element={ <Services /> } />

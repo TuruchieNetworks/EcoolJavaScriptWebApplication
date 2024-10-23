@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../../ImageCarousel.css'; 
 import logo from '../../img/logo.jpg'; 
 import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
@@ -20,12 +20,14 @@ const images = [
 const ImageCarousel = () => {
     const { idx, handleNext, handlePrev } = useCarousel(images); // Use the custom hook
 
+
     return (
         <div className="Carousel">
             <div
                 className="image-container"
                 id="imgs"
-                style={{ transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
+                style={{ 
+                    transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
             >
                 {images.map((image, index) => (
                     index === 0 ? 

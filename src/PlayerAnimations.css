@@ -945,6 +945,7 @@ p {
   background: url('../src/img/logo.jpg') no-repeat center center/cover;
   animation: gradient-animation 0.31s infinite ease-in-out;
   animation: cover-spreader 5.3s 1 ease-in-out;
+  /* animation: none; */
   transition: all 5.3s ease-in-out;
 }
 

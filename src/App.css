@@ -362,7 +362,21 @@ body:hover {
   z-index: 20;
   border-radius: 5%;
 }
+.bio-container {
+  width: 100%;
+}
+.phoneBio {
+  width: 100%;
+  display: none;
+}
 
+.phone-state {
+  width: 100%;
+  visibility:visible;
+} 
+.bio-container p {
+  background: rgba(0, 0, 0, 0.7); 
+}
 /* Mobile Styles */
 @media (max-width: 700px) {
   #showcase .showcase-container {
@@ -393,6 +407,23 @@ body:hover {
 }
 
 @media (max-width: 768px) { 
+  .phone-state {
+    visibility: hidden;
+    transition: all 0.1s ease;
+  } 
+  .pcBio {
+    display: none;
+    transition: all 3.1s ease;
+  }
+  .phoneBio {
+    display: flex;
+    height: 100px;
+    /* background: rgba(0, 0, 0, 0.7); */
+    transition: all 2.1s ease;
+  }
+  /* .phoneBio:hover {
+    background: rgba(0, 0, 0, 0.9);
+  } */
   .menu-wrap .menu {
     position: fixed;
     top: 0;

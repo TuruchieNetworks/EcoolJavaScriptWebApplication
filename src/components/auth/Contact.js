@@ -7,7 +7,7 @@ import pose_brown_gradient from '../../img/pose_brown_gradient.jpg';
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
-import HeaderLinks from '../layout/HeaderLinks';
+import HeaderLinks from '../headers/HeaderLinks';
 import useCarouselImages from '../hooks/UseCarouselImages';
 
 // Array of background images

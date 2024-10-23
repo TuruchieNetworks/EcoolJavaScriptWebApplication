@@ -7,8 +7,9 @@ import pose_brown_gradient from '../../img/pose_brown_gradient.jpg';
 import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
 import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
 import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
-import HeaderLinks from '../layout/HeaderLinks';
+import HeaderLinks from '../headers/HeaderLinks';
 import useCarouselImages from '../hooks/UseCarouselImages';
+import Biography from '../layout/Bio';
 
 // Array of background images
 const images = [
@@ -37,37 +38,31 @@ const Services = ({ currentBackground }) => {
         <div className="video-background App"
             id="showcase"
             style={{
-            backgroundImage: `url(${images[idx]})`,
-            transition: 'background-image 0.5s ease-in-out',
-            height: '100vh',
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center',
-        }}
+                backgroundImage: `url(${images[idx]})`,
+                transition: 'background-image 0.5s ease-in-out',
+                height: '100vh',
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center',
+            }}
         >
             <div className="container showcase-container imageCover">
                 <div className='flex-carousel'>
-                    <div className="image-carousel">
-                        <ImageCarousel images={images} idx={idx} setIdx={changeImage} />
+                    <div className='showcase-container'>
+                        <ImageCarousel />
                     </div>
-                    <div className='carousel-contents'>
-                        <p style={{fontSize: '14px'}}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.
-                        </p>
+                    <div className='pcBio'>
+                        <Biography />
                     </div>
                 </div>
+                <div className='phoneBio'>
+                    <Biography />
+                </div>
+                <div className='phone-state'>
                 <HeaderLinks />
-                <Link to="/music" className="btn party-lights"> {/* Updated to use Link */}
+                <Link to="/about" className="btn party-lights">
                     Read More
                 </Link>
+                </div>
             </div>
         </div>
     );
