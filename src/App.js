@@ -11,10 +11,8 @@ import MusicBackground from './components/backgroundVideos/MusicBackground';
 import LandingBackground from './components/backgroundVideos/LandingBackground';
 import BouncingSpheres from './components/physics_graphics/BouncingSpheres';
 import PhysicsAnimations from './components/physics_graphics/PhysicsAnimations';
-import { LoadedModels } from './components/loaded_models/LoadedModelTextures'; // Import as LoadedModels
-import { SpinningBox } from './components/loaded_models/LoadedModelTextures'; // Import SpinningBox separately
-import ImageCarousel from './components/carousels/ImageCarousel';
-import BackgroundCarousel from './components/carousels/BackgroundCarousel';
+import { LoadedModels } from './components/loaded_models/LoadedModelTextures';
+import { SpinningBox } from './components/loaded_models/LoadedModelTextures';
 import './App.css';
 
 function App() {
@@ -33,8 +31,8 @@ function App() {
         <Route exact path='/LoadedModels' element={ <LoadedModels /> } />
         <Route exact path='/BouncingSpheres' element={ <BouncingSpheres /> } />
         <Route exact path='/PhysicsAnimations' element={ <PhysicsAnimations /> } />
-        <Route exact path='/Music' element={ <MusicBackground /> } />
         <Route exact path='/SpinningBox' element={ <SpinningBox /> } />
+        <Route exact path='/Music' element={ <MusicBackground /> } />
       </Routes>
     </div>
   );
