@@ -23,15 +23,14 @@ const Landing = () => {
                         <Biography />
                     </div>
                 </div>
-                {/* <BioHeader /> */}
                 <div className='phoneBio'>
                     <Biography />
                 </div>
                 <div className='phone-state'>
-                <HeaderLinks />
-                <Link to="/about" className="btn party-lights">
-                    Read More
-                </Link>
+                    <HeaderLinks />
+                    <Link to="/about" className="btn party-lights">
+                        Read More
+                    </Link>
                 </div>
             </div>
             <MusicBackground />

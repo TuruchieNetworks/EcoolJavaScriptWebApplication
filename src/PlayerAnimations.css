@@ -942,6 +942,9 @@ p {
   -webkit-border-radius: 5%;
   border-radius: 5%;
   opacity: 0.9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background: url('../src/img/logo.jpg') no-repeat center center/cover;
   animation: gradient-animation 0.31s infinite ease-in-out;
   animation: cover-spreader 5.3s 1 ease-in-out;
@@ -1102,7 +1105,7 @@ p {
   width: 100%;
 }
 .imageCover {
-  background-image: url('../src/img/logo.jpg');
+  /* background-image: url('../src/img/logo.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1118,7 +1121,7 @@ p {
 
 .imageCard:hover,
 .imageCover:hover {
-  background: url('../src/img/logo.jpg');
+  /* background: url('../src/img/logo.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

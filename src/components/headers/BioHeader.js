@@ -4,10 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const BioHeader = () => {
     const navigate = useNavigate();
     const setDynamicRoute = () => {
-        const toggler = document.querySelector('.toggler');
-        toggler.checked = false; // Uncheck the toggler to close the menu
+        navigate('/');
     };
-    navigate('/');
     return (
     <div className='headerTitle'>
         <div className=''>

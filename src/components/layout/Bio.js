@@ -5,13 +5,8 @@ const Biography = () => {
     return (
         <div className='bio-container'>
             <p style={{ fontSize: '14px' }}>
-                {/* <BioHeader /> */}
-                <h2 className="party-lights spreader">
-                    <div className="bright-cover type-writer">
-                        <span className="spreader">ECool: The Number 1 Future of Afrobeats</span> 🎶 
-                        <span className="fas fa-drum"></span>
-                    </div>
-                </h2>
+                <BioHeader />
+
                 <span className='bio-content'>
                     ECool, known offstage as Ebianga Ikpeme, is an electrifying force in the world of Afrobeats, hailing from the vibrant streets of Lagos, Nigeria. His musical journey ignited at the young age of 17 as a DJ, and he has since evolved into a multifaceted artist—dancer, producer, entrepreneur, and comedian—all while radiating an infectious energy that captivates audiences.
                 </span>
