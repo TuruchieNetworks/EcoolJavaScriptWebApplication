@@ -22,30 +22,33 @@ const ImageCarousel = () => {
 
 
     return (
-    <div>
-        <div className="Carousel">
-            <div
-                className="image-container"
-                id="imgs"
-                style={{ 
-                    transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
-            >
-                {images.map((image, index) => (
-                
-                    <img 
-                        src={image} 
-                        alt={`image-${index}`} 
-                        key={index}
-                        
-                    /> 
-                ))}
-            </div>
-            <div className='btn-container'>
-                <CarouselButton direction="left" handleClick={handlePrev} />
-                <CarouselButton direction="right" handleClick={handleNext} />
+        <div>
+            <div className="Carousel">
+                <div
+                    className="image-container"
+                    id="imgs"
+                    style={{
+                        transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'
+                    }}
+                >
+                    {images.map((image, idx) => (
+                        <img
+                            src={image}
+                            alt={`image-${idx}`}
+                            key={idx}
+                            // style={{
+                            //     width: '500px',
+                            //     objectFit: 'cover'
+                            // }}
+                        />
+                    ))}
+                </div>
+                <div className='btn-container'>
+                    <CarouselButton direction="left" handleClick={handlePrev} />
+                    <CarouselButton direction="right" handleClick={handleNext} />
+                </div>
             </div>
         </div>
-    </div>
     );
 };
 
