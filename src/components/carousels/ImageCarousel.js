@@ -35,27 +35,16 @@ const ImageCarousel = () => {
                         src={image} 
                         alt={`image-${index}`} 
                         key={index}
-                        style={{
-                            width: '500px', 
-                            objectFit: 'cover'
-                        }}
-                    /> :
-                    <img 
-                        src={image} 
-                        alt={`image-${index}`} 
-                        key={index}
-                        style={{
-                            width: '500px', 
-                            // height: 'auto', 
-                            objectFit: 'cover'
-                        }}
+                        
                     /> 
+            
+                        
                 ))}
             </div>
-        </div>
-        <div className='btn-container'>
-            <CarouselButton direction="left" handleClick={handlePrev} />
-            <CarouselButton direction="right" handleClick={handleNext} />
+            <div className='btn-container'>
+                <CarouselButton direction="left" handleClick={handlePrev} />
+                <CarouselButton direction="right" handleClick={handleNext} />
+            </div>
         </div>
     </div>
     );
