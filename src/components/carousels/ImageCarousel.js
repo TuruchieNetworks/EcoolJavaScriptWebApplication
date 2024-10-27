@@ -31,34 +31,20 @@ const ImageCarousel = () => {
                     transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
             >
                 {images.map((image, index) => (
-                    index === 0 ? 
+                
                     <img 
                         src={image} 
                         alt={`image-${index}`} 
                         key={index}
-                        style={{
-                            width: '500px', 
-                            objectFit: 'cover'
-                        }}
-                    /> :
-                    <img 
-                        src={image} 
-                        alt={`image-${index}`} 
-                        key={index}
-                        style={{
-                            width: '500px', 
-                            // height: 'auto', 
-                            objectFit: 'cover'
-                        }}
+                        
                     /> 
                 ))}
             </div>
-        </div>
             <div className='btn-container'>
                 <CarouselButton direction="left" handleClick={handlePrev} />
                 <CarouselButton direction="right" handleClick={handleNext} />
             </div>
-        
+        </div>
     </div>
     );
 };
