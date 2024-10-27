@@ -52,10 +52,10 @@ const ImageCarousel = () => {
                     /> 
                 ))}
             </div>
-            <div className='btn-container'>
-                <CarouselButton direction="left" handleClick={handlePrev} />
-                <CarouselButton direction="right" handleClick={handleNext} />
-            </div>
+        </div>
+        <div className='btn-container'>
+            <CarouselButton direction="left" handleClick={handlePrev} />
+            <CarouselButton direction="right" handleClick={handleNext} />
         </div>
     </div>
     );
