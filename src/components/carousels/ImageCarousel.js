@@ -21,7 +21,7 @@ const ImageCarousel = () => {
     const { idx, handleNext, handlePrev } = useCarousel(images); // Use the custom hook
 
 
-    return (
+    return (<div>
         <div className="Carousel">
             <div
                 className="image-container"
@@ -37,7 +37,7 @@ const ImageCarousel = () => {
                         key={index}
                         style={{
                             width: '500px', 
-                            objectFit: 'contain'
+                            objectFit: 'cover'
                         }}
                     /> :
                     <img 
@@ -57,6 +57,7 @@ const ImageCarousel = () => {
                 <CarouselButton direction="right" handleClick={handleNext} />
             </div>
         </div>
+    </div>
     );
 };
 
