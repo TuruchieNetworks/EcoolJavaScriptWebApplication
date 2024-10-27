@@ -21,7 +21,8 @@ const ImageCarousel = () => {
     const { idx, handleNext, handlePrev } = useCarousel(images); // Use the custom hook
 
 
-    return (<div>
+    return (
+    <div>
         <div className="Carousel">
             <div
                 className="image-container"
@@ -30,22 +31,34 @@ const ImageCarousel = () => {
                     transform: `translateX(${-idx * 100}%)`, transition: 'transform 0.5s ease-in-out'}}
             >
                 {images.map((image, index) => (
-                     
+                    index === 0 ? 
                     <img 
                         src={image} 
                         alt={`image-${index}`} 
                         key={index}
-                        
+                        style={{
+                            width: '500px', 
+                            objectFit: 'cover'
+                        }}
+                    /> :
+                    <img 
+                        src={image} 
+                        alt={`image-${index}`} 
+                        key={index}
+                        style={{
+                            width: '500px', 
+                            // height: 'auto', 
+                            objectFit: 'cover'
+                        }}
                     /> 
-            
-                        
                 ))}
             </div>
+        </div>
             <div className='btn-container'>
                 <CarouselButton direction="left" handleClick={handlePrev} />
                 <CarouselButton direction="right" handleClick={handleNext} />
             </div>
-        </div>
+        
     </div>
     );
 };
