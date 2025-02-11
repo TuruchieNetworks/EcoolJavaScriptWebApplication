@@ -1,4 +1,104 @@
+/* Shadow Container */
+.shadow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  /* color: rgb(189, 180, 255); */
+  box-shadow: 2px 2px 7px #6fa0d1;
+  /* box-shadow: 3px 3px 10px #6fa0d1; */
+  background: rgba(0, 0, 0, 0.7);
+  /* box-shadow: 1px 1px 8px #6fa0d1; */
+  font-size: small;
+  z-index: 38;
+  transition: all 0.3s ease-in;
+
+  width: 100%;
+  padding: 5px 10px;
+  margin: 5px 0;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-container:hover {
+  padding: 10px;
+  -moz-box-shadow: 0px 6px 5px black;
+  -webkit-box-shadow: 0px 6px 5px black;
+  box-shadow: 0px 6px 5px black;
+  transition: all 0.3s ease-in;
+}
+
+.inner-shadow-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  /* color: rgb(189, 180, 255); */
+  box-shadow: 2px 2px 7px #6fa0d1;
+  /* box-shadow: 3px 3px 10px #6fa0d1; */
+  background: rgba(0, 0, 0, 0.7);
+  /* box-shadow: 1px 1px 8px #6fa0d1; */
+  /* font-size: 12px; */
+  z-index: 38;
+  transition: all 0.3s ease-in;
+
+  width: 100%;
+  padding: 5px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.inner-shadow-container:hover {
+  padding: 5px;
+  -moz-box-shadow: 0px 6px 5px black;
+  -webkit-box-shadow: 0px 6px 5px black;
+  box-shadow: 0px 6px 5px black;
+  transition: all 0.3s ease-in;
+}
+
+/* Flex Cards */
+.slider-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small; 
+  margin-bottom: 5px ;
+}
+.bottom-panels {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 38;
+  padding: 0 3px;
+  /* margin: 5px 0; */
+  font-size: 12px;
+  transition: all 0.3s ease-in;
+}
+
+.player-flex-panels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 38;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 12px;
+  transition: all 0.3s ease-in;
+}
+.player-flex-panels i {
+  padding: 10px;
+}
 /* Profile Cards */
+.track-info {
+  font-size: small;
+  margin: 5px 0;
+}
+.track-info p {
+  font-size: small;
+}
 .profile-art {
   height: 190px;
   width: 190px;

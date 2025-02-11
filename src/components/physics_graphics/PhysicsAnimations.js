@@ -14,9 +14,9 @@ const PhysicsAnimations = () => {
 
     // Create spheres inside a bounding cube
     const spheres = [];
-    const numSpheres = 5;
-    const radius = 0.5;
-    const cubeSize = 5;
+    const numSpheres = 50;
+    const radius = 0.15;
+    const cubeSize = 50;
     const gravity = new THREE.Vector3(0, -0.1, 0); // Gravity vector
     const dampingFactor = 0.99; // Damping factor for velocity
 

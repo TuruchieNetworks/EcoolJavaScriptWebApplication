@@ -13,6 +13,7 @@ import PhysicsAnimations from './components/physics_graphics/PhysicsAnimations';
 import { LoadedModels } from './components/loaded_models/LoadedModelTextures';
 import { SpinningBox } from './components/loaded_models/LoadedModelTextures';
 import './App.css';
+import AudioPlayer from './components/player/AudioPlayer';
 
 function App() {
   return ( 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/' element={<Navigate to='/Landing' />} />
         <Route exact path='/Landing' element={ <LandingBackground /> } />
         <Route exact path='/About' element={ <About /> } />
+        <Route exact path='/AudioPlayer' element={ <AudioPlayer /> } />
         <Route exact path='/AboutLanding' element={ <AboutLanding /> } />
         <Route exact path='/Contact' element={ <Contact /> } />
         <Route exact path='/Services' element={ <Services /> } />

@@ -32,14 +32,16 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 :root {
   --primary-color: rgba(13, 110, 139, 0.75);
-  --secondary-color: rgba(229, 148, 0 , 0.9);
-  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --secondary-color: rgba(229, 148, 0, 0.9);
+  --overlay-color: rgba(24, 39, 51, 0.85);
   --menu-speed: 0.75s;
 }
 
@@ -53,9 +55,10 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.4;
   text-align: center;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   transition: all 3s ease-in-out;
 }
+
 /* 
 body:hover {
   overflow-y: auto;
@@ -127,7 +130,7 @@ body:hover {
 }
 
 /* Hamburger Line */
-.menu-wrap .hamburger > div {
+.menu-wrap .hamburger>div {
   position: relative;
   flex: none;
   width: 100%;
@@ -140,8 +143,8 @@ body:hover {
 }
 
 /* Hamburger Lines - Top & Bottom */
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
+.menu-wrap .hamburger>div::before,
+.menu-wrap .hamburger>div::after {
   content: '';
   position: absolute;
   z-index: 2;
@@ -152,40 +155,40 @@ body:hover {
 }
 
 /* Moves Line Down */
-.menu-wrap .hamburger > div::after {
+.menu-wrap .hamburger>div::after {
   top: 10px;
 }
 
 /* Toggler Animation */
-.menu-wrap .toggler:checked + .hamburger > div {
+.menu-wrap .toggler:checked+.hamburger>div {
   transform: rotate(135deg);
 }
 
 /* Turns Lines Into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
+.menu-wrap .toggler:checked+.hamburger>div:before,
+.menu-wrap .toggler:checked+.hamburger>div:after {
   top: 0;
   transform: rotate(90deg);
 }
 
 /* Rotate On Hover When Checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
+.menu-wrap .toggler:checked:hover+.hamburger>div {
   transform: rotate(225deg);
 }
 
 /* Show Menu */
-.menu-wrap .toggler:checked ~ .menu {
+.menu-wrap .toggler:checked~.menu {
   visibility: visible;
 }
 
-.menu-wrap .toggler:checked ~ .menu > div {
+.menu-wrap .toggler:checked~.menu>div {
   transform: scale(1);
   transition-duration: var(--menu-speed);
 }
 
-.menu-wrap .toggler:checked ~ .menu > div > div {
+.menu-wrap .toggler:checked~.menu>div>div {
   opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
+  transition: opacity 0.4s ease 0.4s;
 }
 
 .menu-wrap .menu {
@@ -201,11 +204,13 @@ body:hover {
   justify-content: center;
 }
 
-.menu-wrap .menu > div {
+.menu-wrap .menu>div {
   background: var(--overlay-color);
   border-radius: 50%;
-  width: 300vw; /* Increased from 200vw */
-  height: 300vw; /* Increased from 200vw */
+  width: 300vw;
+  /* Increased from 200vw */
+  height: 300vw;
+  /* Increased from 200vw */
   display: flex;
   flex: none;
   align-items: center;
@@ -214,7 +219,7 @@ body:hover {
   transition: all 0.4s ease;
 }
 
-.menu-wrap .menu > div > div {
+.menu-wrap .menu>div>div {
   text-align: center;
   max-width: 100vw;
   max-height: 100vh;
@@ -222,14 +227,14 @@ body:hover {
   transition: opacity 0.4s ease;
 }
 
-.menu-wrap .menu > div > div > ul > li {
+.menu-wrap .menu>div>div>ul>li {
   list-style: none;
   color: #fff;
   font-size: 1.5rem;
   padding: 1rem;
 }
 
-.menu-wrap .menu > div > div > ul > li > a {
+.menu-wrap .menu>div>div>ul>li>a {
   color: inherit;
   z-index: 26;
   padding: 0.2rem;
@@ -240,28 +245,31 @@ body:hover {
   transition: color 0.4s ease;
 }
 
-.menu-wrap .menu > div > div > ul > li > a:hover {
+.menu-wrap .menu>div>div>ul>li>a:hover {
   -moz-box-shadow: 0px 6px 5px black;
   -webkit-box-shadow: 6px 6px 5px black;
   box-shadow: 0px 6px 5px black;
   color: var(--secondary-color);
   font-weight: bold;
-  color:black;
+  color: black;
   padding: 0.5rem;
   z-index: 36;
   animation: gradient-animation 0.6s infinite ease-in-out;
   transition: all 0.3s ease-in;
 }
+
 /* Header */
 .headerTitle {
   margin: 10px 0;
   color: inherit;
   text-decoration: none;
 }
+
 .headerTitle:hover {
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
+
 /* Showcase */
 #showcase {
   /* background: var(--primary-color); */
@@ -271,28 +279,36 @@ body:hover {
   position: relative;
   z-index: 0;
 }
+
 #aboutShowcase {
   width: 100%;
-  height: 100vh; /* Ensure full height */
+  height: 100vh;
+  /* Ensure full height */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  justify-content: center;
+  /* Center content vertically */
+  align-items: center;
+  /* Center content horizontally */
 }
 
 .imageCover {
-  height: 100%; /* Ensure the image-covering container stretches fully */
-  width: 100%; /* Full width */
+  height: 100%;
+  /* Ensure the image-covering container stretches fully */
+  width: 100%;
+  /* Full width */
 }
 
 .container {
-  /* width: 100%; */
+  width: 100%;
   padding: 10px 0;
-  /* padding: 0.3rem; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-.container:hover {
-  overflow-y: auto;
+
+.player-container {
+  width: 100%;
+  margin: 8px 5px;
+  /* overflow: hidden; */
 }
 
 #showcase:before {
@@ -322,13 +338,15 @@ body:hover {
 #showcase p {
   font-size: 1.3rem;
 }
-.carousel-container{ 
+
+.carousel-container {
   display: flex;
   background-size: cover;
   background-position: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 
 }
+
 .flex-carousel {
   /**/
   display: flex;
@@ -343,19 +361,23 @@ body:hover {
   box-shadow: 0px 6px 5px black;
   /* animation: gradient-animation 1.41s infinite ease-in-out; */
 }
+
 .flex-carousel .carousel-contents {
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   height: 550px;
   z-index: 20;
   /* border-radius: 5%; */
-  overflow: hidden;
   background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  overflow: auto;
 }
+
 .flex-carousel .carousel-contents:hover {
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.9);
 }
+
 .flex-carousel .carousel-contents p {
   flex: 1;
   width: 100%;
@@ -363,24 +385,38 @@ body:hover {
   z-index: 20;
   border-radius: 5%;
 }
+
 .bio-container {
   width: 100%;
+  height: 100%;
 }
+
 .bio-container p {
-  text-align:left;
+  text-align: left;
   padding: 5px;
   padding: 0.3rem;
   z-index: 20;
-  background: rgba(0, 0, 0, 0.7); 
+  background: rgba(0, 0, 0, 0.7);
 }
+
 .bio-container p:hover {
   z-index: 500;
-  background: rgba(0, 0, 0, 0.9); 
+  background: rgba(0, 0, 0, 0.9);
   transition: all 0.91s ease-in-out;
 }
+
 .bio-container p .bio-content {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
+
+.pcBio {
+  display: flex;
+  height: 100%;
+  overflow: auto;
+  /* background: rgba(0, 0, 0, 0.7); */
+  transition: all 2.1s ease;
+}
+
 .phoneBio {
   width: 100%;
   display: none;
@@ -388,8 +424,9 @@ body:hover {
 
 .phone-state {
   width: 100%;
-  visibility:visible;
-} 
+  visibility: visible;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   #showcase .showcase-container {
@@ -397,47 +434,57 @@ body:hover {
     text-align: center;
     height: 100vh;
   }
+
   .flex-carousel {
     flex-direction: column;
     justify-content: space-between;
-  } 
+  }
+
   .image-carousel {
     height: 100%;
   }
-  .flex-carousel span{
+
+  .flex-carousel span {
     height: 50vh;
   }
+
   .flex-carousel {
     width: 100%;
     height: 100vh;
+  }
+
+  .flex-carousel .carousel-contents {
+    height: 100%;
+    overflow: auto;
+  }
+
 }
 
-.flex-carousel .carousel-contents {
-  height: 100%;
-  overflow: auto;
-}
-
-}
-
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .phone-state {
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
     transition: all 0.1s ease;
-  } 
+  }
+
   .pcBio {
     display: none;
     transition: all 3.1s ease;
   }
+
   .phoneBio {
     display: flex;
-    height: 100px;
+    height: 500px;
+    overflow: auto;
     /* background: rgba(0, 0, 0, 0.7); */
     transition: all 2.1s ease;
   }
+
   .bio-container p .bio-content {
     display: block;
     margin: 10px 0;
   }
+
   /* .phoneBio:hover {
     background: rgba(0, 0, 0, 0.9);
   } */
@@ -452,14 +499,16 @@ body:hover {
     display: flex;
   }
 
-  .menu-wrap .menu > div {
+  .menu-wrap .menu>div {
     position: fixed;
     top: 0;
     left: 0;
     background: var(--overlay-color);
     border-radius: 0%;
-    width: 100vw; /* Increased from 200vw */
-    height: 100vh; /* Increased from 200vw */
+    width: 100vw;
+    /* Increased from 200vw */
+    height: 100vh;
+    /* Increased from 200vw */
     align-items: center;
     transition: all 0.1s ease;
   }

@@ -21,7 +21,23 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
 } */
+/* Shadow Container */
+.shadow-container {
+  width: 100%;
+  padding: 0px;
+  -moz-border-radius: 5%;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
 
+.shadow-container:hover {
+  padding: 5px;
+  -moz-box-shadow: 0px 6px 5px black;
+  -webkit-box-shadow: 0px 6px 5px black;
+  box-shadow: 0px 6px 5px black;
+  transition: all 0.3s ease-in;
+}
 .slider-container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), (0, 0, 0, 0.23);
   height: 70vh;

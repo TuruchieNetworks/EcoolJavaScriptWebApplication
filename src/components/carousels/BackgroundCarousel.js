@@ -20,7 +20,7 @@ const images = [
 
 const BackgroundCarousel = ({ onBackgroundChange }) => {
   const { idx, changeImage } = useCarouselImages(images);
-  console.log(changeImage);
+  //console.log(changeImage);
 
   return (
     <div className="Carousel"
