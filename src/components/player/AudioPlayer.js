@@ -76,6 +76,7 @@ const AudioPlayer = () => {
           style={{ margin: '5px', cursor: 'pointer' }}////
           onClick={toggleMute}
         />
+
         <input
           ref={volumeRef} // Attach ref to volume slider
           style={{ cursor: 'pointer' }}
@@ -90,8 +91,8 @@ const AudioPlayer = () => {
             setVolume(value)
           }}
         />
-        <p style={{ fontSize: 'small' }}>Volume</p>
 
+        <p style={{ fontSize: 'small' }}>Volume</p>
         <p style={{ fontSize: 'small' }}>Track Duration: {totalDuration ?? 0}</p>
       </div>
     </div>
