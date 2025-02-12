@@ -1,4 +1,3 @@
-import NeverChange from "../../media/NeverChange.mp3";
 class MusicUtils {
   constructor() {
     this.baseUrl = "https://your-bucket.s3.amazonaws.com/"; // Replace with your actual S3 bucket URL
@@ -16,8 +15,8 @@ class MusicUtils {
         name: "Never Change",
         artist: "Animate",
         genre: "Music",
-        music: `${NeverChange}`, // Static file path
-        file: `${NeverChange}`, // Static file path
+        music: "media/NeverChange.mp3", // Static file path
+        file: "media/NeverChange.mp3", // Static file path
       },
       // S3 Hosted Tracks
       //...this.getDynamicS3Tracks(["SkyHigh.mp3", "OceanWaves.mp3"], "Electronic"), // Example tracks
