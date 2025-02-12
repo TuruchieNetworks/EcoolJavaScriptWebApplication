@@ -1,34 +1,19 @@
 import React, { useRef, useEffect } from 'react';
-import logo_scene from '../../videos/logo_scene.mp4';
 import '../../VideoBackground.css';
 import Music from '../auth/Music';
-import logo from '../../img/logo.jpg'; 
-import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
-import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
-import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
-import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
+import ImageUtils from '../hooks/ImageUtils';
+import UseVideoBackground from '../hooks/UseVideoBackground';
 import useBackgroundImages from '../hooks/UseBackgroundImages';
-
-const images = [
-    logo,
-    pose_brown_gradient,
-    pose_gaze_brown,
-    smiling_pose_brown,
-    solid_pose_kharki,
-];
+import MusicUtils from '../player/MusicUtils';
 
 const MusicBackground = () => {
-    const videoRef = useRef(null); // Create a reference for the video element
+    const musicUtils = new MusicUtils();
+    const imageUtilities = new ImageUtils();
+    const images = imageUtilities.getAllCarouselImages();
+    const videosList = musicUtils.getVideoList();
+    const logo_scene = videosList[0].video;
+    const { videoRef } = UseVideoBackground();
     const { idx } = useBackgroundImages(images); // Use the custom hook
-
-    useEffect(() => {
-        // Play the video when the component mounts
-        if (videoRef.current) {
-            videoRef.current.play().catch((error) => {
-                console.error("Error attempting to play the video:", error);
-            });
-        }
-    }, []); // Empty dependency array to run once on mount
 
     return (
         <div className=""

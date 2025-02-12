@@ -1,37 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import ImageCarousel from '../carousels/ImageCarousel';
-import logo from '../../img/logo.jpg'; 
-import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
-import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
-import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
-import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
-import HeaderLinks from '../headers/HeaderLinks';
 import Bio from './Bio';
+import HeaderLinks from '../headers/HeaderLinks';
+import ImageCarousel from '../carousels/ImageCarousel';
+import ImageUtils from '../hooks/ImageUtils';
+import UseVideoBackground from '../hooks/UseVideoBackground';
+import useBackgroundImages from '../hooks/UseBackgroundImages';
 import useCarouselImages from '../hooks/UseCarouselImages';
+import MusicUtils from '../player/MusicUtils';
 
-// Array of background images
-const images = [
-    logo,
-    pose_brown_gradient,
-    pose_gaze_brown,
-    smiling_pose_brown,
-    solid_pose_kharki,
-];
-
-const About = ({ currentBackground, handlePrev, handleNext }) => {
+const About = () => {
+    const musicUtils = new MusicUtils();
+    const imageUtilities = new ImageUtils();
+    const images = imageUtilities.getAllCarouselImages();
+    const videosList = musicUtils.getVideoList();
+    const logo_scene = videosList[0].video;
+    const { videoRef } = UseVideoBackground();
     const { idx, changeImage } = useCarouselImages(images);
-    const videoRef = useRef(null); 
-
-    useEffect(() => {
-        // Play the video when the component mounts
-        if (videoRef.current) {
-            videoRef.current.play().catch((error) => {
-                console.error("Error attempting to play the video:", error);
-            });
-        }
-    }, []); // Empty dependency array to run once on mount
 
 
     return (

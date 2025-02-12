@@ -1,18 +1,13 @@
 import React, { useRef, useEffect } from 'react';
-import logo_scene from '../../videos/logo_scene.mp4';
 import '../../VideoBackground.css';
+import UseVideBackground from '../hooks/UseVideoBackground';
+import MusicUtils from '../player/MusicUtils';
 
 const VideoBackground = () => {
-    const videoRef = useRef(null); // Create a reference for the video element
-
-    useEffect(() => {
-        // Play the video when the component mounts
-        if (videoRef.current) {
-            videoRef.current.play().catch((error) => {
-                console.error("Error attempting to play the video:", error);
-            });
-        }
-    }, []); // Empty dependency array to run once on mount
+    const { videoRef } = UseVideBackground();
+    const musicUtils = new MusicUtils();
+    const videosList = musicUtils.getVideoList();
+    const logo_scene = videosList[0].video;
 
     return (
         <div className="video-background">
