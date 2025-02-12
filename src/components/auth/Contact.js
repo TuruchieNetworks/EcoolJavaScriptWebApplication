@@ -1,37 +1,20 @@
-import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import '../../App.css';
+import React, { useEffect } from 'react';
 import ImageCarousel from '../carousels/ImageCarousel';
-import logo from '../../img/logo.jpg'; 
-import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
-import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
-import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
-import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import HeaderLinks from '../headers/HeaderLinks';
+import MusicUtils from '../player/MusicUtils';
+import ImageUtils from '../hooks/ImageUtils';
 import useCarouselImages from '../hooks/UseCarouselImages';
-
-// Array of background images
-const images = [
-    logo,
-    pose_brown_gradient,
-    pose_gaze_brown,
-    smiling_pose_brown,
-    solid_pose_kharki,
-];
+import UseVideoBackground from '../hooks/UseVideoBackground';
 
 const Contact = () => {
-    const videoRef = useRef(null); 
+    const musicUtils = new MusicUtils();
+    const imageUtilities = new ImageUtils();
+    const { videoRef } = UseVideoBackground();
+    const videosList = musicUtils.getVideoList();
+    const logo_scene = videosList[0].video
+    const images = imageUtilities.getAllCarouselImages();
     const { idx, changeImage } = useCarouselImages(images);
-    console.log(changeImage)
-
-    useEffect(() => {
-        // Play the video when the component mounts
-        if (videoRef.current) {
-            videoRef.current.play().catch((error) => {
-                console.error("Error attempting to play the video:", error);
-            });
-        }
-    }, [idx]); // Empty dependency array to run once on mount
 
     return (
         <div
@@ -69,6 +52,13 @@ const Contact = () => {
                 <Link to="/music" className="btn party-lights">
                     Read More
                 </Link>
+            </div>
+            
+            <div className="video-background">
+                <video ref={videoRef} loop muted autoPlay>
+                    <source src={logo_scene} type="video/mp4" />
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
         </div>
     );
