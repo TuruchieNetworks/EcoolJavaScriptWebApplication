@@ -4,6 +4,8 @@ import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
 import HeaderLinks from '../headers/HeaderLinks';
 import Biography from '../layout/Bio';
+import BackgroundCarousel from '../carousels/BackgroundCarousel';
+import AudioPlayer from '../player/AudioPlayer';
 
 const Music = () => {
     //const { idx, changeImage } = useCarouselImages(images);
@@ -30,17 +32,11 @@ const Music = () => {
         }}
         >
             <div className="container showcase-container imageCover">
-                <div className='flex-carousel'>
-                    <div className='showcase-container'>
-                        <ImageCarousel />
-                    </div>
-                    <div className='pcBio'>
-                        <Biography />
-                    </div>
+            <BackgroundCarousel />
+                <div className='player-container'>
+                    <AudioPlayer />
                 </div>
-                <div className='phoneBio'>
-                    <Biography />
-                </div>
+                
                 <div className='phone-state'>
                 <HeaderLinks />
                 <Link to="/about" className="btn party-lights">

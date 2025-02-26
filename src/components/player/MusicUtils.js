@@ -20,6 +20,16 @@ class MusicUtils {
       },
       // S3 Hosted Tracks
       //...this.getDynamicS3Tracks(["SkyHigh.mp3", "OceanWaves.mp3"], "Electronic"), // Example tracks
+      {
+        title: "Moody Choir Sanctuary",
+        originalTrackName: "media/MOODY_CHOIR_SANCTUARY.mp3",
+        img: "NeverChange.jpg",
+        name: "Moody Choir Sanctuary",
+        artist: "Animate",
+        genre: "Music",
+        music: "media/MOODY_CHOIR_SANCTUARY.mp3", // Static file path
+        file: "media/MOODY_CHOIR_SANCTUARY.mp3", // Static file path
+      },
     ];
   }
 

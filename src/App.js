@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/layout/NavBar';
 import About from './components/layout/About';
-import AboutLanding from './components/layout/AboutLanding';
 import Contact from './components/auth/Contact';
 import Services from './components/auth/Services';
 import Merchandise from './components/auth/Merchandise';
@@ -24,7 +23,6 @@ function App() {
         <Route exact path='/Landing' element={ <LandingBackground /> } />
         <Route exact path='/About' element={ <About /> } />
         <Route exact path='/AudioPlayer' element={ <AudioPlayer /> } />
-        <Route exact path='/AboutLanding' element={ <AboutLanding /> } />
         <Route exact path='/Contact' element={ <Contact /> } />
         <Route exact path='/Services' element={ <Services /> } />
         <Route exact path='/Merchandise' element={ <Merchandise /> } />

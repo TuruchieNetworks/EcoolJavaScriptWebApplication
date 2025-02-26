@@ -1,39 +1,26 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
-import logo from '../../img/logo.jpg'; 
-import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
-import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
-import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
-import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import HeaderLinks from '../headers/HeaderLinks';
-import useCarouselImages from '../hooks/UseCarouselImages';
 import Bio from '../layout/Bio';
+import UseVideoBackground from '../hooks/UseVideoBackground';
+import BackgroundCarousel from '../carousels/BackgroundCarousel';
+import useCarouselImages from '../hooks/UseCarouselImages';
+import AudioPlayer from '../player/AudioPlayer';
+import MusicUtils from '../player/MusicUtils';
+import ImageUtils from '../hooks/ImageUtils';
 
-// Array of background images
-const images = [
-    logo,
-    pose_brown_gradient,
-    pose_gaze_brown,
-    smiling_pose_brown,
-    solid_pose_kharki,
-];
 
 const Merchandise = ({ currentBackground }) => {
-    const intervalRef = useRef(null);
-    const videoRef = useRef(null);
-    const { idx, changeImage } = useCarouselImages(images);
-    console.log(changeImage)
-
-    useEffect(() => {
-        // Play the video when the component mounts
-        if (videoRef.current) {
-            videoRef.current.play().catch((error) => {
-                console.error("Error attempting to play the video:", error);
-            });
-        }
-    }, [idx]); // Empty dependency array to run once on mount
+    const musicUtils = new MusicUtils();
+    const imageUtilities = new ImageUtils();
+    const images = imageUtilities.getAllCarouselImages();
+    const { videoRef } = UseVideoBackground();
+    const videosList = musicUtils.getVideoList();
+    const logo_scene = videosList[0].video
+    
+    const { idx } = useCarouselImages(images);
 
     return (
         <div
@@ -56,6 +43,9 @@ const Merchandise = ({ currentBackground }) => {
                         <Bio />
                     </div>
                 </div>
+                <div className='player-container'>
+                    <AudioPlayer />
+                </div>
                 <div className='phoneBio'>
                     <Bio />
                 </div>
@@ -66,6 +56,7 @@ const Merchandise = ({ currentBackground }) => {
                 </Link>
                 </div>
             </div>
+            <BackgroundCarousel />
         </div>
     );
 };

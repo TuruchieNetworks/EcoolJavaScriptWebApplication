@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import '../../VideoBackground.css';
+import '../../styles/VideoBackground.css';
 import UseVideBackground from '../hooks/UseVideoBackground';
 import MusicUtils from '../player/MusicUtils';
 

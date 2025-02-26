@@ -37,11 +37,11 @@ const useAudioPlayer = () => {
   const { timeConverter } = useUIUtils();
 
   const { 
-    trackArt, 
+    // trackArt, 
     nowPlaying, 
     updateTrackInfo, 
     setTrackArt
-  } = useTrackInfo(musicList, trackIndex);
+  } = useTrackInfo(trackIndex, isPlaying);
 
   const { 
     logoLeads,
@@ -52,8 +52,8 @@ const useAudioPlayer = () => {
     landingHover, 
     updateInfoCard, 
     setLogoLeads, 
-    setDynamicLeadClasses
-  } = useUIEvents(musicList, trackIndex);
+    // setDynamicLeadClasses
+  } = useUIEvents(trackIndex, isPlaying, nowPlaying);
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/users',
@@ -79,6 +79,7 @@ const useAudioPlayer = () => {
       // Update dynamic content for track info and logo
       toggleLogo();
       updateInfoCard();
+      updateTrackInfo(trackIndex, isPlaying)
     }, 1000);
 
     // Cleanup interval on component unmount
@@ -86,15 +87,18 @@ const useAudioPlayer = () => {
   }, [trackIndex]);
 
   const loadTrack = () => {
-    clearInterval(updateTimer);
+    // clearInterval(updateTimer);
     //convertTime(currentTrack.duration)
     reset();
 
     // Set the new track information
     currentTrack.src = musicList[trackIndex].music;
-
+  
     // Update track info using the hook's function
-    updateTrackInfo(trackIndex);
+    updateTrackInfo(trackIndex); 
+    isPlaying? 
+    currentTrack.play():
+    currentTrack.pause();
   
     currentTrack.addEventListener('loadedmetadata', () => {
       // Set total duration once track metadata is loaded
@@ -107,9 +111,10 @@ const useAudioPlayer = () => {
   }
 
   const reset = () => {
-    setCurrentTime(0);
+    setCurrentTime(0.00);
     updateInfoCard(); // Add this line
     setSeekSlider(0);
+    clearInterval(updateTimer);
   }
 
   const randomTrack = () => {
@@ -128,9 +133,11 @@ const useAudioPlayer = () => {
 
   const repeatTrack = () => {
     setIsRepeat(!isRepeat);
-    setCurrentIndex(trackIndex);
-    // loadTrack(trackIndex);
-    // playTrack();
+    currentTrack.addEventListener('ended', mountRepeatTrack);
+  }
+
+  const mountRepeatTrack = () => {
+    currentTrack.currentTime = 0; // No need to change, just restart the current track
   }
 
   const playpauseTrack = () => {
@@ -139,17 +146,19 @@ const useAudioPlayer = () => {
 
   const playTrack = () => {
     currentTrack.play();
-    setTrackArt('rotate')
     setIsPlaying(true);
+    setCurrentIndex(trackIndex);
+    setTrackArt('rotate')
     setWave('loader')
     setPlayPauseBtn('⏸');
   }
 
   const pauseTrack = () => {
-    clearInterval(updateInterval);
+    reset()
     currentTrack.pause();
     setIsPlaying(false);
     setPlayPauseBtn('▶');
+    setTrackArt('')
   }
 
   const stopTrack = () => {
@@ -159,29 +168,32 @@ const useAudioPlayer = () => {
     setIsPlaying(false);
     setSeekSlider(0);
     setPlayPauseBtn('▶');
-    reset()
+    reset();
   }
 
-  const nextTrack = () => {
+  const nextTrack = () => { 
+    if (isRepeat) {
+      currentTrack.currentTime = 0;
+      playTrack();
+    } else 
     if (trackIndex < musicList.length - 1 && !isRandom) {
       setTrackIndex(trackIndex + 1);
+      setCurrentIndex(trackIndex + 1);
     } else if (isRandom) {
       setRandomIndex(Math.floor(Math.random() * musicList.length));
       setTrackIndex(randomIndex);
-    } else if (isRepeat) {
-      setTrackIndex(trackIndex);  // No need to change, just restart the current track
-    } else {
+    }
+    else {
       setTrackIndex(0);  // If it's the last track, go back to the first one
     }
-  
-    loadTrack(trackIndex);  // Load the track based on the new trackIndex
-    playTrack();  // Start playing the track
+
+    //playpauseTrack();  // Start playing the track
   };
 
   const prevTrack = () => {
     setTrackIndex(trackIndex > 0 ? trackIndex - 1 : musicList.length - 1);
-    loadTrack(trackIndex);
-    playTrack();
+    // loadTrack(trackIndex);
+    //playTrack();
   }
 
   // When the user interacts with the seek slider
@@ -224,6 +236,8 @@ const useAudioPlayer = () => {
     console.log('Updating track information...');
     console.log('Current Time:', currentTrack.currentTime);
     console.log('Duration:', currentTrack.duration);
+    console.log('Play State: ', isPlaying);
+    console.log('Repeat State: ', isRepeat);
   
     if (!isNaN(currentTrack.duration)) {
       const newDuration = currentTrack.duration;
@@ -233,6 +247,7 @@ const useAudioPlayer = () => {
       // Update seekSlider value only if it's not manually changed
       if (seekSlider !== newSeekSliderValue) {
         setSeekSlider(newSeekSliderValue);
+        console.log(isPlaying)
       }
   
       const newCurrentMinutes = Math.floor(newCurrentTime / 60);
@@ -260,7 +275,9 @@ const useAudioPlayer = () => {
     {
       musicList,
       trackIndex,
+      nowPlaying,
       isPlaying,
+      isRepeat,
       isRandom,
       isMuted,
       seekSlider,
@@ -274,11 +291,13 @@ const useAudioPlayer = () => {
       prevTrack,
       repeatTrack,
       randomTrack,
+      setIsRepeat,
       seekTo,
       setSeekSlider,
       toggleMute,
       setVolume,
       setVolumeSlider,
+      setLogoLeads,
       landingHover
     }
   );

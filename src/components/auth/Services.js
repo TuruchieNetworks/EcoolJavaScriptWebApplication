@@ -2,28 +2,23 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import ImageCarousel from '../carousels/ImageCarousel';
-import logo from '../../img/logo.jpg'; 
-import pose_brown_gradient from '../../img/pose_brown_gradient.jpg'; 
-import pose_gaze_brown from '../../img/pose_gaze_brown.jpg'; 
-import smiling_pose_brown from '../../img/smiling_pose_brown.jpg'; 
-import solid_pose_kharki from '../../img/solid_pose_kharki.jpg'; 
 import HeaderLinks from '../headers/HeaderLinks';
-import useCarouselImages from '../hooks/UseCarouselImages';
 import Biography from '../layout/Bio';
-
-// Array of background images
-const images = [
-    logo,
-    pose_brown_gradient,
-    pose_gaze_brown,
-    smiling_pose_brown,
-    solid_pose_kharki,
-];
+import useCarouselImages from '../hooks/UseCarouselImages';
+import UseVideoBackground from '../hooks/UseVideoBackground';
+import ImageUtils from '../hooks/ImageUtils';
+// import MusicUtils from '../player/MusicUtils';
+// import BackgroundCarousel from '../carousels/BackgroundCarousel';
+// import AudioPlayer from '../player/AudioPlayer';
 
 const Services = ({ currentBackground }) => {
-    const intervalRef = useRef(null); // to hold the interval reference
-    const { idx, changeImage } = useCarouselImages(images);
-    const videoRef = useRef(null); // Create a reference for the video element
+    const imageUtilities = new ImageUtils();
+    const images = imageUtilities.getAllCarouselImages();
+    const { idx } = useCarouselImages(images);
+    const { videoRef } = UseVideoBackground();
+    // const musicUtils = new MusicUtils();
+    // const videosList = musicUtils.getVideoList();
+    // const logo_scene = videosList[0].video
 
     useEffect(() => {
         // Play the video when the component mounts

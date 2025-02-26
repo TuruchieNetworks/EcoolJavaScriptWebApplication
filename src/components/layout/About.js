@@ -9,6 +9,7 @@ import UseVideoBackground from '../hooks/UseVideoBackground';
 import useBackgroundImages from '../hooks/UseBackgroundImages';
 import useCarouselImages from '../hooks/UseCarouselImages';
 import MusicUtils from '../player/MusicUtils';
+import BackgroundCarousel from '../carousels/BackgroundCarousel';
 
 const About = () => {
     const musicUtils = new MusicUtils();
@@ -51,6 +52,7 @@ const About = () => {
                 </Link>
                 </div>
             </div>
+            <BackgroundCarousel />
         </div>
     );
 };

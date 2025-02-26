@@ -1,24 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import '../../PlayerAnimations.css';
-import About from './About';
+import '../../styles/PlayerAnimations.css';
 import HeaderLinks from '../headers/HeaderLinks';
 import Biography from './Bio';
 import AudioPlayer from '../player/AudioPlayer';
-import PlayerComponent from '../player/PlayerComponent';
-import MusicUtils from '../player/MusicUtils';
-import UseVideoBackground from '../hooks/UseVideoBackground';
 import ImageCarousel from '../carousels/ImageCarousel';
 import BackgroundCarousel from '../carousels/BackgroundCarousel';
-import MusicBackground from '../backgroundVideos/MusicBackground';
 import VideoBackground from '../backgroundVideos/VideoBackground';
+// import MusicUtils from '../player/MusicUtils';
+// import UseVideoBackground from '../hooks/UseVideoBackground';
 
 const Landing = () => {
-    const { videoRef } = UseVideoBackground();
-    const musicUtils = new MusicUtils();
-    const videosList = musicUtils.getVideoList();
-    const logo_scene = videosList[0].video
+    // const musicUtils = new MusicUtils();
+    // const { videoRef } = UseVideoBackground();
+    // const videosList = musicUtils.getVideoList();
+    // const logo_scene = videosList[0].video
     return (
         <div id="showcase">
             <div className="container showcase-container imageCover">
@@ -30,11 +27,11 @@ const Landing = () => {
                         <Biography />
                     </div>
                 </div>
-                <div className='player-container'>
-                    <AudioPlayer />
-                </div>
                 <div className='phoneBio'>
                     <Biography />
+                </div>
+                <div className='player-container'>
+                    <AudioPlayer />
                 </div>
                 <div className='phone-state bottom-panels'>
                     <HeaderLinks />
@@ -43,9 +40,7 @@ const Landing = () => {
                     </Link>
                 </div>
             </div>
-            <MusicBackground />
             {/* <VideoBackground /> */}
-            <About />
             <BackgroundCarousel />
         </div>
     );
